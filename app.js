@@ -131,7 +131,8 @@ function drawPeopleAtLocations() {
 
 // Array.map(element => {
 // return element.picture
-// })
+// }) 
+// read MDN docs on methods!!!!!!!
 
 randomLocation()
 drawPeopleAtLocations()
