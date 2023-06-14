@@ -1,5 +1,5 @@
 //1- assign random hunter 
-//2- assign random location to each person
+//2- assign random location to each person & show their picture there
 
 
 const locations = [
@@ -96,44 +96,52 @@ const people = [
 
 function assignVampireHunter() {
   let randomNumber = Math.floor(Math.random() * people.length)
-  console.log(`random number`, randomNumber);
-  let randomPerson = people[randomNumber]
-  randomPerson.isHunter = true
-  console.log('random hunter', randomPerson);
+  // console.log(`random number`, randomNumber);
+  let randomHunter = people[randomNumber]
+  randomHunter.isHunter = true
+  console.log('random hunter', randomHunter);
 }
 
 
-function randomLocation() {
+function personAtRandomLocation() {
   people.forEach(person => {
     let randomNumber = Math.floor(Math.random() * locations.length)
-    console.log('random number', randomNumber);
+    // console.log('random number', randomNumber);
     let randomLocation = locations[randomNumber]
     person.location = randomLocation
+    person.picture = document.getElementById(randomLocation)?.innerText
   })
   console.log(people)
 }
 
+// function attack() {
+//   people.forEach(person => {
+//     person.picture = '🦇'
+//   }
+// }
+
+// document.getElementById(randomHunter)?.innerHTML = randomLocation()
 
 
-function drawPeopleAtLocations() {
-  console.log('this is the people array', people)
-  locations.forEach(location => {
+// function drawPeopleAtLocations() {
+// console.log('this is the people array', people)
+//   locations.forEach(location => {
 
-    let filteredArray = people.filter(person => person.location == location
-      // console.log(person.picture)
-    )
-    console.log(filteredArray)
-  })
+//     let filteredArray = people.filter(person => person.location == location
+//     )
+//     console.log(people.picture'')
+//     console.log(filteredArray)
+//     const personAtLocationElement = document.getElementById('🏣')
+//     personAtLocationElement.innerText = people.picture''
+//   })
 
-  // const personAtLocationElement = document.getElementById('🏣')
-  // personAtLocationElement.innerText = people.picture
-}
+// }
 
 // Array.map(element => {
 // return element.picture
 // }) 
 // read MDN docs on methods!!!!!!!
 
-randomLocation()
-drawPeopleAtLocations()
+personAtRandomLocation()
+// drawPeopleAtLocations()
 assignVampireHunter()
